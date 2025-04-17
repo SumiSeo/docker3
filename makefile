@@ -33,4 +33,4 @@ clean:
 re: clean up
 
 prune: clean
-		@docker systemp prune -a --volumes -f
+		@docker system prune -a --volumes -f
