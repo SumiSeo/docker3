@@ -1,5 +1,5 @@
-WP_DATA = /home/sumi/data/wordpress
-DB_DATA = /home/sumi/data/mariadb
+WP_DATA = /home/sumseo/data/wordpress
+DB_DATA = /home/sumseo/data/mariadb
 
 all: up
 
