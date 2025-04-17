@@ -11,6 +11,13 @@ cd /var/www/wordpress
 chmod -R 755 /var/www/wordpress/
 chown -R www-data:www-data /var/www/wordpress
 
+# 🕒 Wait for the database to be ready
+echo "⏳ Waiting for MariaDB to be ready..."
+until mysql -h"$MYSQL_HOST" -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" -e "SELECT 1;" "$MYSQL_DB" >/dev/null 2>&1; do
+    echo "❌ Database not ready yet. Retrying in 2s..."
+    sleep 2
+done
+echo "✅ MariaDB is ready!"
 
 # wp installation
 wp core download --allow-root
