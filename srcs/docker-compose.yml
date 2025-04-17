@@ -1,4 +1,4 @@
-bservices :
+services :
   mariadb:
     image: mariadb:user
     container_name: mariadb
